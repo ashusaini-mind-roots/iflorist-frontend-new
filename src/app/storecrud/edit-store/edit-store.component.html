@@ -1,0 +1,283 @@
+<div class="row plrb-08">
+    <div class="col d-flex align-items-start flex-wrap">
+        <div class="mr-auto previouslink">
+            <a [routerLink]="['/stores']" class="addbig d-flex align-items-center">
+                <span class="back mr-1"></span>
+                <span class="txt-color-dark-black">Previous</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 col-xl-12">
+    <div class="generic-card mb-5">
+        <h3 class="card-header">
+            <span class="ml-3 font-size-1 txt-color- font-medium">Store Profile</span>
+        </h3>
+        <div class="card-body ml-lg-5 ml-xl-5 pb-lg-5 pb-xl-5">
+            <form [formGroup]="storeEditform" (ngSubmit)="editStore()">
+                <div class="row">
+                    <div class="col-8 py-4">
+                        <div class="form-group d-flex align-items-center">
+                            <div *ngIf="selectedFile.src!=''" style="width: 78px; height: 78px;" [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}"></div>
+                            <div *ngIf="selectedFile.src==''" style="width: 78px; height: 78px; background: url('/assets/image/upload.svg') no-repeat"></div>
+                            <div class="d-flex flex-column pl-4 pl-4">
+                                <div class="gray-big-title ">{{store.store_name}}</div>
+                                <div class="upload-btn-wrapper">
+                                    <button class="upload-file-text pl-0 txt-size-09rem">Upload Profile photo </button>
+                                    <input #imageInput
+                                           type="file"
+                                           accept="image/*"
+                                           (change)="processFile(imageInput)">
+                                    <!--                <input type="file" name="myfile" />-->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <label for="store_name">Store Name</label>
+                            <!--store_name, contact_email, contact_phone, zip_code, address-->
+                            <input type="text" formControlName="store_name" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.store_name.errors }" />
+                            <div *ngIf="submitted && f.store_name.errors" class="invalid-feedback">
+                                <div *ngIf="f.store_name.errors.required">Store Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_email">Email Address</label>
+                            <input type="text" formControlName="contact_email" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.contact_email.errors}" />
+                            <div *ngIf="submitted && f.contact_email.errors" class="invalid-feedback">
+                                <div *ngIf="f.contact_email.errors.email">Contact Email should be a valid email</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+							  <label for="website">Website</label>
+							  <input type="text" formControlName="website" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.website.errors}" />
+							  <div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+									<div *ngIf="f.website.errors.pattern">Enter a valid Website</div>
+								</div>
+						  </div>
+                        <div class="form-group">
+                            <label for="contact_phone">Phone Number </label>
+                            <input id="tel" formControlName="contact_phone" class="line-input" phoneMask [preValue]="storeEditform.value.contact_phone"  [phoneControl]="storeEditform.controls['contact_phone']"  maxlength="14" [ngClass]="{ 'is-invalid': submitted && f.contact_phone.errors }"/>
+                      <div *ngIf="submitted && f.contact_phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.contact_phone.errors.minlength">Phone Number min lenght is 10</div>
+                        <div *ngIf="f.contact_phone.errors.maxlength">Phone Number max lenght is 10</div>
+					  </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address </label>
+                            <input type="text" formControlName="address" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" formControlName="city" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                                    <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                        <div *ngIf="f.city.errors.required">City is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" formControlName="state" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+                                    <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                        <div *ngIf="f.state.errors.required">Stateity is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="zip_code">ZipCode</label>
+                                    <input type="text" formControlName="zip_code" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.zip_code.errors }" mask="00000" />
+                                    <div *ngIf="submitted && f.zip_code.errors" class="invalid-feedback">
+                                        <div *ngIf="f.zip_code.errors.minlength">Zip Code min lenght is 5</div>
+                                        <div *ngIf="f.zip_code.errors.maxlength">Zip Code max lenght is 6</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                        <div class="row">-->
+<!--						  -->
+<!--&lt;!&ndash;						  <div class="col-md-6">&ndash;&gt;-->
+<!--&lt;!&ndash;							  <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;								  <label for="projection_percentage">Target Percentage Projection Default</label>&ndash;&gt;-->
+<!--&lt;!&ndash;								  <input type="text" pattern="^[0-9]{1,3}$|^[0-9]{1,3}\.[0-9]{1,2}$" formControlName="projection_percentage" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.projection_percentage.errors }"/>&ndash;&gt;-->
+<!--&lt;!&ndash;								  <div *ngIf="submitted && f.projection_percentage.errors" class="invalid-feedback">&ndash;&gt;-->
+<!--&lt;!&ndash;									  <div *ngIf="f.projection_percentage.errors.required">Target Percentage Projection is required</div>&ndash;&gt;-->
+<!--&lt;!&ndash;									  <div *ngIf="f.projection_percentage.errors.pattern">Enter a valid Target Percentage Projection</div>&ndash;&gt;-->
+<!--&lt;!&ndash;								  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;							  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </div>&ndash;&gt;-->
+<!--						</div>-->
+                        <div class="row">
+						    <div class="col-md-6">
+								<div class="form-group">
+								  <label for="target_percentage">Target COL Percentage Default</label>
+
+								  <input type="text" [validation]="false"  mask="000" suffix="%" formControlName="target_percentage" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.target_percentage.errors }"/>
+
+								  
+
+								  <div *ngIf="submitted && f.target_percentage.errors" class="invalid-feedback">
+									  <div *ngIf="f.target_percentage.errors.required">Target Percentage is required</div>
+									  <div *ngIf="f.target_percentage.errors.pattern">Enter a valid Target Percentage in range 0% to 100%</div>
+								  </div>
+								</div>
+							</div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="target_costof_goods">Target Cost of Hard Goods</label>
+
+                                    <input name ="target_costof_goods" type="text" [validation]="false"  mask="000" suffix="%" formControlName="target_costof_goods" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.target_costof_goods.errors }"/>
+
+                                    
+
+                                    <div *ngIf="submitted && f.target_costof_goods.errors" class="invalid-feedback">
+                                        <div *ngIf="f.target_costof_goods.errors.required">Target Cost of Hard Goods is required</div>
+                                        <div *ngIf="f.target_costof_goods.errors.pattern">Enter a valid Target Cost of Hard Goods in range 0% to 100%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="row">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="target_costof_fresh">Target Cost of Fresh</label>
+
+                                    <input name ="target_costof_fresh" type="text"[validation]="false"  mask="000" suffix="%" formControlName="target_costof_fresh" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.target_costof_fresh.errors }"/>
+
+                                    <div *ngIf="submitted && f.target_costof_fresh.errors" class="invalid-feedback">
+                                        <div *ngIf="f.target_costof_fresh.errors.required">Target Cost of Fresh is required</div>
+                                        <div *ngIf="f.target_costof_fresh.errors.pattern">Enter a valid Target Cost of Fresh in range 0% to 100%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sui">Sui</label>
+                                    <input name ="sui" type="text" [validation]="false" mask="0.00" suffix="%" [dropSpecialCharacters]="false" formControlName="sui" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.sui.errors }"/>
+                                    <div *ngIf="submitted && f.sui.errors" class="invalid-feedback">
+                                        <div *ngIf="f.sui.errors.required">Sui is required</div>
+                                        <div *ngIf="f.sui.errors.pattern">Enter a valid Sui</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="futa">FUTA</label>
+                                    <input name ="futa" type="text" [validation]="false" mask="0.00" suffix="%" [dropSpecialCharacters]="false" formControlName="futa" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.futa.errors }"/>
+                                    <div *ngIf="submitted && f.futa.errors" class="invalid-feedback">
+                                        <div *ngIf="f.futa.errors.required">FUTA is required</div>
+                                        <div *ngIf="f.futa.errors.pattern">Enter a valid FUTA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="social_security">Social Security</label>
+                                    <input name ="social_security" type="text" [validation]="false" mask="0.00" suffix="%" [dropSpecialCharacters]="false" formControlName="social_security" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.social_security.errors }"/>
+                                    <div *ngIf="submitted && f.social_security.errors" class="invalid-feedback">
+                                        <div *ngIf="f.social_security.errors.required">Social Security is required</div>
+                                        <div *ngIf="f.social_security.errors.pattern">Enter a valid Social Security</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="row">
+						    <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="medicare">Medicare</label>
+                                    <input name ="medicare" type="text" [validation]="false" mask="0.00" suffix="%" [dropSpecialCharacters]="false" formControlName="medicare" class="line-input" [ngClass]="{ 'is-invalid': submitted && f.medicare.errors }"/>
+                                    <div *ngIf="submitted && f.medicare.errors" class="invalid-feedback">
+                                        <div *ngIf="f.medicare.errors.required">Medicare is required</div>
+                                        <div *ngIf="f.medicare.errors.pattern">Enter a valid Medicare</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="employees">Employees</label>
+                            <div class="container-employees round-borders-10">
+                                <div class="employee_item" *ngFor="let employee of employees"><button type="button" (click)="deleteEmployee(employee.id)">X </button><a [routerLink]="['/edit-employee', employee.id]">{{employee.name}}</a></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button [disabled]="loading" class="btn-ligth-blue mt-5">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Apply Changes
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div *ngIf="showActionUploadCSV" class="col-lg-12 col-xl-12 mt-5">
+    <div class="generic-card mb-5">
+        <h3 class="card-header">
+            <span class="ml-3 font-size-1 txt-color- font-medium">Upload Weekly Projection Percent Revenues</span>
+        </h3>
+        <div class="card-body ml-lg-5 ml-xl-5 pb-lg-5 pb-xl-5">
+            <form [formGroup]="csvForm" (ngSubmit)="uploadCsv()">
+                <div class="row">
+                    <div class="col-md-4">
+						<div class="form-group">
+						  <label for="projection_percentage">Target Projection %</label>
+						  <input type="text" [validation]="false"  mask="000" suffix="%"  formControlName="projection_percentage" class="line-input" [ngClass]="{ 'is-invalid': submittedCsv && c.projection_percentage.errors }"/>
+						  <div *ngIf="submittedCsv && c.projection_percentage.errors" class="invalid-feedback">
+							  <div *ngIf="c.projection_percentage.errors.required">Target Projection Percentage is required</div>
+							  <div *ngIf="c.projection_percentage.errors.pattern">Enter a valid Target Projection Percentage in range 0% to 100%</div>
+						  </div>
+						</div>
+					  </div>
+				</div>
+				<div class="row">
+                    <div class="col-8">
+                        <div class="form-group d-flex align-items-center">
+
+                            <div class="upload-btn-wrapper">
+                                <button class="">Select CSV file </button>
+                                <input #csvInput
+                                       type="file"
+                                       accept=".csv"
+                                       (change)="processCsvFile(csvInput)">
+                                <!--                <input type="file" name="myfile" />-->
+								&nbsp;<label>{{fileName}}</label>
+                            </div>
+                        </div>
+
+<!--                        <div  class="form-group custom-control custom-checkbox">-->
+<!--                            <input #checkProjePerc  type="checkbox" [(ngModel)]="checkProjectionPercent" [ngModelOptions]="{standalone: true}" (change)="checkStoreProjectionPercent(checkProjePerc.checked)" class="custom-control-input" id="checkProjePerc" name="checkProjePerc">-->
+<!--                            <label class="custom-control-label" for="checkProjePerc">Use Target Percentage Projection Store Default</label>-->
+<!--                        </div>-->
+
+                    </div>
+                </div>
+                <button type="buttons" [disabled]="loadingCsv" class="btn-ligth-blue mt-5">
+                    <span *ngIf="loadingCsv" class="spinner-border spinner-border-sm mr-1"></span>
+                    Upload file
+                </button>
+                <span *ngIf = "loadingCsv" class="px-4">
+                    <span *ngIf="loadingCsv" class="spinner-border spinner-border-sm mr-1"></span>
+                    <span >{{uploaded_percentage}} %. </span>
+                    <span>Uploading the document, please wait.</span>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>

@@ -1,0 +1,399 @@
+<!-- Page Header -->
+<div class="page-header">
+	<div>
+		<h2 class="main-content-title tx-24 mg-b-5">Inventory</h2>
+	</div>
+	<div class="btn btn-list customsselect">
+	<select class="form-control select select2">
+			<option label="Quarter"></option>
+			<option value="Quarter 1">Quarter 1</option>
+			<option value="Quarter 2">Quarter 2</option>
+			
+		</select>
+		<select class="form-control select select2">
+			<option label="Year"></option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+			
+		</select>
+		<select class="form-control select select2">
+			<option label="Select Store"></option>
+			<option value="Store 1">Store 1</option>
+			<option value="Store 2">Store 2</option>
+			
+		</select>
+		
+	</div>
+</div>
+<!-- End Page Header -->
+<!-- Row -->
+<div class="row">
+	<div class="col-lg-12">
+		<div class="card custom-card overflow-hidden">
+			<div class="card-body">
+				<div class="sumsec inventorypagetop">
+					<h6 class="card-title mb-1">Driftwood</h6>
+					
+					<div class="addinvesection">
+					<button class="btn ripple btn-main-primary buttoncolor" style="width:auto;" data-target="#addinventory" data-toggle="modal" >Add New Inventory Item</button> 
+
+					<button class="btn ripple btn-main-primary buttoncolor" style="width:auto;">Edit</button>
+					
+					<button class="btn ripple btn-main-primary buttoncolor" style="width:auto;">Delete</button>
+					</div>
+					
+				</div>
+				<div class="topinvesec">
+				 <div class="col-lg-7 ffleft p-0">
+				    <div class="col-lg-4 ffleft pl-0 posirelat">
+					  <div class="form-group">
+						<label class="">Keyword</label>
+						<input class="form-control" required="" type="text" placeholder="Search term 1">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					  </div>
+					</div>
+					<div class="col-lg-4 ffleft  pl-0 posirelat">
+					  <div class="form-group">
+						<label class="">Second Keyword</label>
+						<input class="form-control" required="" type="text" placeholder="Search term 2">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					  </div>
+					</div>
+					<div class="col-lg-4 ffleft  pl-0 posirelat">
+					  <div class="form-group">
+						<label class="">Exclude Keyword</label>
+						<input class="form-control" required="" type="text" placeholder="Negative Search">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					  </div>
+					</div>
+				 </div>
+				 <div class="col-lg-1 ffleft p-0 pl-0 mt-33">
+				    <p class="colorcss filterclear">Filter</p>
+					<p class="colorcss clearcolorcss" >Clear</p>
+					
+				 </div>
+				 <div class="col-lg-4 ffright mt-33 p-0">
+				    <div class="col-lg-8 p-0 ffleft  pl-0 posirelat">
+					   <p>LOW THREHOLD: <span style="color: #1CABA0;">4</span></p>
+					</div>
+					<div class="col-lg-4 p-0 ffleft pl-0 posirelat">
+					   <p style="color: #1CABA0;">View Reports</p>
+					</div>
+				 </div>
+				</div>
+				
+				<div class="table-responsive">
+					<table class="table table-bordered mg-b-0">
+						<thead>
+							<tr>
+								<th width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></th>
+								<th width="180">PRODUCT</th>
+								<th width="100">CASE CODE</th>
+								<th width="80">VENDOR</th>
+								<th>CAT.</th>
+								<th width="100">PRODUCT #</th>
+								<th>CASES</th>
+								<th>LOOSE</th>
+								<th>QTY</th>
+								<th>LAST DAYS</th>
+								<th>VALUE</th>
+								<th>UNIT</th>
+								<th>SRP</th>
+								<th>MIN PRICE</th>
+							 </tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							<tr>
+								<td width="2%"><label class="ckbox"><input type="checkbox"><span></span></label></td>
+								<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;">Sweet Devotion</td>
+								<td>1086E</td>
+								<td>FTD</td>
+								<td>EDY</td>
+								<td>DV3</td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td><input class="form-control input-sm borrad" type="text" name="row-5-age" value="100"></td>
+								<td>23</td>
+								<td>4</td>
+								<td>$123</td>
+								<td>$13.09</td>
+								<td>$123</td>
+								<td>$123</td>
+							</tr>
+							
+							
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- End Row -->
+
+<!-- Large Modal -->
+	<div class="modal" id="addinventory">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content modal-content-demo">
+			<div class="modal-header">
+				<h6 class="modal-title">Add New inventory Item</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+				<form>
+				<div class="col-md-12 p-0 ffleft">
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Product</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Vendor</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Category</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-12 p-0 ffleft">
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Unit Price</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Location</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Product #</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-12 p-0 ffleft">
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Case Pack</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Shipping</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Case Code</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-12 p-0 ffleft">
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Case Price</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>High Threshold</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+					<div class="col-md-4 ffleft">
+					<div class="form-group text-left customeffect ">
+					    <label>Low Threshold</label>
+						<input class="form-control effect-1" placeholder="Placeholder" type="text">
+						<span class="focus-border"></span>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-12 p-0 ffleft">
+					<div class="col-md-6 ffleft">
+						<input type="file" class="dropify" data-height="80" />
+					</div>
+							
+					
+					<div class="col-md-6 ffleft">
+					<button class="btn ripple btn-primary buttoncolor buttoncolortransparent" type="button">Save and Report</button>
+				    <button class="btn ripple btn-secondary buttoncolor">Save</button>
+					</div>
+				</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</div>
+	</div>
+	</div>
+<!--End Large Modal -->

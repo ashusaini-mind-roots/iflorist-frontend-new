@@ -1,0 +1,249 @@
+﻿<!-- Page Header -->
+<div class="page-header">
+  <div>
+    <h2 class="main-content-title tx-24 mg-b-5 dashbreadcrumb">Dashboard</h2>
+    <button href="#" class="btn ripple btn-outline-light btn-sm mt-0 bgwhite mr10" data-target="#invoicedashboard" data-toggle="modal">Enter Invoice</button>
+    <a href="#" class="btn ripple btn-outline-light btn-sm mt-0 bgwhite mr10" data-target="#dashboardsales" data-toggle="modal">Enter Sale</a>
+  </div>
+  <div class="btn btn-list customsselect">
+  <select class="form-control select select2"> 
+      <option label="Quarter"></option>
+      <option value="Quarter 1">Quarter 1</option>
+      <option value="Quarter 2">Quarter 2</option>      
+    </select>
+    <select class="form-control select select2">
+      <option label="Year"></option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>     
+    </select>
+    <select class="form-control select select2">
+      <option label="Select Store"></option>
+      <option value="Store 1">Store 1</option>
+      <option value="Store 2">Store 2</option>     
+    </select>    
+  </div> 
+</div>
+<!-- End Page Header -->
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                <div class="dasundercardhead">
+                    <h6 class="card-title mb-1">Sales</h6>
+                    <div class="dashpercentage">
+                        <p>Actual: <span class="redcolor">$14,900</span></p>
+                        <p>Projected: <span class="tcolor">$21,900</span></p>
+                    </div>
+                </div>
+                <div class="dashchardbar">
+                    <div id="echart5" class="echart-height"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                
+                <div class="dasundercardhead">
+                    <h6 class="card-title mb-1">Cost of Hard Goods</h6>
+                    <div class="dashpercentage">
+                        <p>Actual: <span class="redcolor">$14,900</span></p>
+                        <p>Projected: <span class="tcolor">$21,900</span></p>
+                    </div>
+                </div>
+                <div class="dashchardbar">
+                    <div id="dashboardchart2" class="echart-height"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                
+                <div class="dasundercardhead">
+                    <h6 class="card-title mb-1">Cost of Fresh</h6>
+                    <div class="dashpercentage">
+                        <p>Actual: <span class="redcolor">$14,900</span></p>
+                        <p>Projected: <span class="tcolor">$21,900</span></p>
+                    </div>
+                </div>
+                <div class="dashchardbar">
+                    <div id="dashboardchart3" class="echart-height"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                
+                <div class="dasundercardhead">
+                    <h6 class="card-title mb-1">Cost of Labor</h6>
+                    <div class="dashpercentage">
+                        <p>Actual: <span class="redcolor">$14,900</span></p>
+                        <p>Projected: <span class="tcolor">$21,900</span></p>
+                    </div>
+                </div>
+                <div class="dashchardbar">
+                    <div id="dashboardchart4" class="echart-height"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+<div class="modal" id="invoicedashboard">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content tx-size-sm">
+                    <div class="modal-header">
+                            <h6 class="modal-title">Enter Invoice</h6>
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                               <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body tx-center pd-y-20 pd-x-20">
+                            <form>
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Vendor Name</label>
+                                <input class="form-control effect-1" placeholder="Vendor Name" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Invoice Number</label>
+                                <input class="form-control effect-1" placeholder="Invoice Number" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Fresh</label>
+                                <input class="form-control effect-1" placeholder="Fresh" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Fresh</label>
+                                <input class="form-control effect-1" placeholder="Hard Goods" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Supplies</label>
+                                <input class="form-control effect-1" placeholder="Supplies" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Date</label>
+                                <input class="form-control effect-1" placeholder="Date" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Invoice Date</label>
+                                <input class="form-control effect-1" placeholder="Invoice Date" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Delivery</label>
+                                <input class="form-control effect-1" placeholder="Delivery" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12 p-0 ffleft">
+                            
+                            <div class="col-md-6 ffleft">
+                            <button class="btn ripple btn-main-primary btn-block buttoncolor" type="submit" style="width: 100%;">Save</button>
+                            </div>
+                            </div>
+                            </form>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="dashboardsales">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content tx-size-sm">
+                    <div class="modal-header">
+                            <h6 class="modal-title">Enter Sale</h6>
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                               <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body tx-center pd-y-20 pd-x-20">
+                            <form>
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Retail</label>
+                                <input class="form-control effect-1" placeholder="$100.00" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Wire</label>
+                                <input class="form-control effect-1" placeholder="$100.00" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Weddings/Events</label>
+                                <input class="form-control effect-1" placeholder="$100.00" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <div class="form-group text-left customeffect ">
+                            <label>Delivery</label>
+                                <input class="form-control effect-1" placeholder="$100.00" type="text">
+                                <span class="focus-border"></span>
+                            </div>
+                            </div>
+                            </div>
+                            
+                            <div class="col-md-12 p-0 ffleft">
+                            <div class="col-md-6 ffleft totalpopamount">
+                            <p>Total</p>
+                            <h1>$400</h1>
+                            </div>
+                            <div class="col-md-6 ffleft">
+                            <button class="btn ripple btn-main-primary btn-block buttoncolor" type="submit" style="width: 100%;">Save</button>
+                            </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>

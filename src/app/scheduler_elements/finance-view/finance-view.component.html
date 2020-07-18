@@ -1,0 +1,71 @@
+<!--<div class="panel panel-primary mb-5">-->
+<!--    <div class="panel-body">-->
+<!--        <div class="generic-card table-responsive">-->
+<!--            <h5 class="card-header">Finance View</h5>-->
+
+            <p-table class="generic-table finance-view-table" #dt [columns]="cols" dataKey="id" [value]="employeesScheduleList" [lazy]="true">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th class="{{col.header}}" *ngFor="let col of columns">
+                {{col.header}}
+              </th>
+              <th class="toggle"></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-employeesScheduleList let-expanded="expanded" let-columns="columns">
+<!--    <tr *ngFor="let employee of employeesScheduleList">-->
+        <tr>
+          <td class="pl-5">{{employeesScheduleList.name}}</td>
+          <td>{{employeesScheduleList.category_name}}</td>
+<!--          <td>{{employeesScheduleList.total_minutes_at_week}}</td>-->
+            <td>{{calcEmployeesTotalHours(employeesScheduleList)}}</td>
+          <td>{{employeesScheduleList.hourly_pay_rate}}</td>
+          <td *ngIf="hasAcces"><span *ngIf="hasAcces">{{25}}</span></td>
+
+          <!--<td>{{week.totalMerchandise | number: '1.2-2'}}</td>-->
+          <!--<td>{{week.totalWire | number: '1.2-2'}}</td>-->
+          <!--<td>{{week.totalDelivery | number: '1.2-2'}}</td>-->
+          <!--<td>{{week.totalDelivery+week.totalWire+week.totalMerchandise | number: '1.2-2'}}</td>-->
+          <td>
+            <a href="#" [pRowToggler]="employeesScheduleList">
+              <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+            </a>
+          </td>
+        </tr>
+  </ng-template>
+          <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+	        <tr>
+	            <td class="sub-table" [attr.colspan]="columns.length + 1">
+                <div class="row mt-2 px-3 ">
+				    <div [ngClass]="{'borderright-lg-xl' : i!=6}" class="col" *ngFor="let schedule_days of rowData.schedule_days ; let i = index">
+
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="font-size-09 txt-color-gray4 mt-1">{{schedule_days.date}}</div>
+                            <div class="mb-2">{{schedule_days.day_of_week}}</div>
+                            <div class="my-1">
+                                <input class="input-number mr-1" type="time" [(ngModel)]="schedule_days.time_in" placeholder="HH:mm">
+                                <input class="input-number" type="time" [(ngModel)]="schedule_days.time_out" placeholder="HH:mm" >
+                            </div>
+                            <div class="mb-1">
+                                <input class="width-50px input-number" type="number"  [(ngModel)]="schedule_days.break_time" placeholder="min" >
+                            </div>
+                            <label>{{calcTimesDifference(schedule_days.time_in,schedule_days.time_out,schedule_days.break_time)}}</label>
+                        </div>
+				    </div>
+			    </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-end bg-color-gray-eee mt-2">
+                        <button class="m-2 btn-ligth-blue mt-1 px-5" type="button" (click)="updateSchedulesByCategory(rowData.schedule_days,rowData.category_name, rowData.employee_id)">SAVE</button>
+                    </div>
+                </div>
+	   </td>
+	</tr>
+
+  </ng-template>
+
+</p-table>
+            <div class="generic-card-footer"></div>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+

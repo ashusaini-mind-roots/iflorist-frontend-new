@@ -1,0 +1,131 @@
+﻿<app-message></app-message>
+<!-- After login (start)-->
+  <div class="page" *ngIf="currentUser">
+    <!-- Main Header-->
+    <div class="main-header hor-header fixedheader">
+      <div class="container">
+        <div class="main-header-left">
+          <a class="main-header-menu-icon d-lg-none" routerLink="/" id="mainNavShow"><span></span></a>
+          <a class="main-logo" routerLink="/">
+            <img src="assets/new-design/img/newimages/logo.png" class="header-brand-img desktop-logo" alt="logo">
+            <img src="assets/new-design/img/newimages/logo.png" class="header-brand-img icon-logo" alt="logo">
+            <img src="assets/new-design/img/newimages/logo.png" class="header-brand-img desktop-logo theme-logo" alt="logo">
+            <img src="assets/new-design/img/newimages/logo.png" class="header-brand-img icon-logo theme-logo" alt="logo">
+          </a>
+        </div>
+        <!-- Horizonatal menu-->
+    <div class="main-navbar sticky sticky-pin" style="margin-bottom: -58px;">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item" *ngFor = "let module of modules">
+            <a class="nav-link" routerLink="{{module.action}}" routerLinkActive="router-link-active" >{{module.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div><div class="jumps-prevent" style="padding-top: 58px;"></div>
+    <!--End  Horizonatal menu-->
+        <div class="main-header-right">
+          <div class="dropdown d-md-flex header-search">
+            <a class="nav-link icon header-search">
+              <i class="fe fe-search"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="main-form-search p-2">
+                <input class="form-control" placeholder="Search" type="search">
+                <button class="btn"><i class="fe fe-search"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown d-md-flex">
+            <a class="nav-link icon full-screen-link">
+              <i class="fe fe-maximize fullscreen-button"></i>
+            </a>
+          </div>
+          <div class="dropdown main-header-notification">
+            <a class="nav-link icon" href="">
+              <i class="fe fe-bell"></i>
+              <span class="pulse bg-danger"></span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="header-navheading">
+                <p class="main-notification-text">You have 1 unread notification<span class="badge badge-pill badge-primary ml-3">View all</span></p>
+              </div>
+              <div class="main-notification-list">
+                <div class="media new">
+                  <div class="main-img-user online"><img alt="avatar" src="assets/new-design/img/users/5.jpg"></div>
+                  <div class="media-body">
+                    <p>Congratulate <strong>Olivia James</strong> for New template start</p><span>Oct 15 12:32pm</span>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="main-img-user"><img alt="avatar" src="assets/new-design/img/users/2.jpg"></div>
+                  <div class="media-body">
+                    <p><strong>Joshua Gray</strong> New Message Received</p><span>Oct 13 02:56am</span>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="main-img-user online"><img alt="avatar" src="assets/new-design/img/users/3.jpg"></div>
+                  <div class="media-body">
+                    <p><strong>Elizabeth Lewis</strong> added new schedule realease</p><span>Oct 12 10:40pm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <a href="">View All Notifications</a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown main-profile-menu">
+            <a class="main-img-user" href=""><img alt="avatar" src="assets/new-design/img/users/1.jpg"></a>
+            <div class="dropdown-menu">
+              <div class="header-navheading">
+                <h5><img class="profiledropdowninfo" alt="avatar" src="assets/new-design/img/users/1.jpg"></h5>
+                <h6 class="main-notification-title">Flora Co Ltd.</h6>
+                <p class="main-notification-text">Hi@Flora.com</p>
+              </div>
+              <a class="dropdown-item border-top" href="">
+                <i class="fe fe-user"></i>Profile
+              </a>
+              <a class="dropdown-item" href="">
+                <i class="fe fe-edit"></i> My Stores
+              </a>
+            
+              <a class="dropdown-item" routerLink="/home" (click)="logout()">
+                <i class="fe fe-power"></i> Sign Out
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- End Main Header-->
+    <!-- Main Content-->
+    <div class="main-content pt-0 mtfirstrowmain">
+      <div class="container">
+        <!-- DYNAMIC PAGE CONTENT (start)-->
+          <router-outlet></router-outlet>
+        <!-- DYNAMIC PAGE CONTENT (end)-->
+
+      </div>
+    </div>
+    <!-- End Main Content-->
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <span>Copyright © 2020 <a href="#">Iflorist</a>. Designed by <a href="http://www.mind-roots.com/">Mind Roots</a> All rights reserved.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Footer-->
+  </div>
+<!-- After login (end)-->
+
+<!-- Without login (start)-->
+  <div *ngIf="!currentUser" style="padding:0px;">
+      <router-outlet></router-outlet>
+  </div>
+<!-- Without login (end)-->

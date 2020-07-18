@@ -1,0 +1,60 @@
+<div class="separator-line my-3"></div>
+<!--<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<div class="panel panel-primary">
+  <div class="panel panel-primary mb-5">
+    <div class="panel-body">
+      <div class="generic-card table-responsive">
+        <h5 class="card-header">Employees</h5>-->
+      <p-table [hidden]="!displayList" class="generic-table employee-table" #dt [columns]="cols" [value]="employees" [paginator]="true" [rows]="15">
+        <!--<ng-template pTemplate="caption">
+          <div style="text-align: right">
+            <i class="icon-14 setting-icon" style="margin:4px 4px 0 0"></i>
+            <input class="imput-gray1" type="text" pInputText size="25" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+          </div>
+        </ng-template>-->
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-employee>
+          <tr>
+		    <td  *ngIf="employee.store_admin"><input [disabled]="!hasAcces" type="radio" checked (change)="storeAdminChange(employee.id)" name="store_admin" [value]="employee.id"></td>
+            <td  *ngIf="!employee.store_admin"><input [disabled]="!hasAcces" type="radio" (change)="storeAdminChange(employee.id)" name="store_admin" [value]="employee.id"></td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.category}}</td>
+            <td>({{employee.phone_number | slice:0:3}}) {{employee.phone_number | slice:3:6}}-{{employee.phone_number | slice:6:10}}</td>
+            <td>{{employee.status_name}}</td>
+            <td>{{employee.store}}</td>
+			<td [hidden]="employee.active=='1'">No</td>
+			<td [hidden]="employee.active!='1'">Yes</td>
+            <td>
+              <a [routerLink]="['/edit-employee', employee.id]" class="itemaction edititem">Edit</a>
+
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+	  <div [hidden]="displayList" class="row container-list-expanded m-0">
+		  <div class="col-lg-3 mb-xl-4 mb-lg-4" *ngFor="let employee of employees">
+				<div class="container-employee generic-card-2">
+					<div *ngIf="employee.image!='default'" class="image"><img src="{{urlImage}}{{employee.image}}"></div>
+					<div *ngIf="employee.image=='default'" class="image"><img src="/assets/image/missing_avatar.svg"></div>
+					<div class="name">{{employee.name}}</div>
+					<div class="company-position">{{employee.store}}<span> | </span>{{employee.status_name}}</div>
+					<div class="email">{{employee.email}}</div>
+					<div class="phone">{{employee.phone_number}}</div>
+				</div>
+		  </div>
+	  </div>
+      
+        <!--<a [routerLink]="['/create-employee']" class="addbig d-flex align-items-center"><span class="plus mr-1"></span><span>Add Employee</span></a>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>-->

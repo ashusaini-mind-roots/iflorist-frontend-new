@@ -1,0 +1,79 @@
+﻿import { Routes, RouterModule } from '@angular/router';
+
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { AuthGuard } from './_helpers';
+import { StoreListComponent } from './storecrud/store-list/store-list.component';
+import { CreateStoreComponent } from './storecrud/create-store/create-store.component';
+import { EditStoreComponent} from "./storecrud/edit-store/edit-store.component";
+
+import {RegisterGeneralDataComponent} from './register-general-data/register-general-data.component';
+import {RegisterPlanDataComponent} from './register-plan-data/register-plan-data.component';
+import {RegisterCcDataComponent} from './register-cc-data/register-cc-data.component';
+import {ActivateCompanyComponent} from './activate-company/activate-company.component';
+import {RegisterCheckEmailMessageComponent} from './register-check-email-message/register-check-email-message.component';
+import {CostOfFreshComponent} from "@app/cost-of-fresh/cost-of-fresh.component";
+import {WeekPanelComponent} from "@app/week-panel/week-panel.component";
+import {ProjectionComponent} from './projection/projection.component'
+import {WeeklyProjectionComponent} from './weeklyprojection/weeklyprojection.component'
+import {SalesComponent} from "@app/sales/sales.component";
+import { SchedulerComponent } from './scheduler_elements/scheduler/scheduler.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import {CretateEmployeeComponent} from './employees/cretate-employee/cretate-employee.component';
+import {EditEmployeeComponent} from './employees/edit-employee/edit-employee.component';
+import {EmployeeParentComponent} from "@app/employees/employee-parent/employee-parent.component";
+import { CompanyemployeeParentComponent} from './companyemployee/companyemployee-parent/companyemployee-parent.component';
+import { CompanyemployeeListComponent} from './companyemployee/companyemployee-list/companyemployee-list.component';
+import { CreateCompanyemployeeComponent} from './companyemployee/create-companyemployee/create-companyemployee.component';
+import { EditCompanyemployeeComponent} from './companyemployee/edit-companyemployee/edit-companyemployee.component';
+import { User,Role } from './_models';
+import { AppUserListComponent } from './app-user/app-user-list/app-user-list.component';
+import { AppUserCreateComponent } from './app-user/app-user-create/app-user-create.component';
+import { AppUserEditComponent } from './app-user/app-user-edit/app-user-edit.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component'
+import { CheckEmailComponent } from './check-email/check-email.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { SucessComponent } from './sucess/sucess.component'
+
+
+const routes: Routes = [
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.EMPLOYEE, Role.COMPANYADMIN, Role.STOREMANAGER] }},
+    { path: 'login', component: LoginComponent },
+    { path: 'stores', component: StoreListComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.COMPANYADMIN, Role.STOREMANAGER] }},
+    { path: 'storecreate', component: CreateStoreComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.COMPANYADMIN, Role.STOREMANAGER] }},
+    { path: 'storeedit/:id', component: EditStoreComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.COMPANYADMIN, Role.STOREMANAGER] } },
+    { path: 'register-general-data', component: RegisterGeneralDataComponent },
+    { path: 'register-plan-data', component: RegisterPlanDataComponent },
+    { path: 'register-cc-data', component: RegisterCcDataComponent },
+    { path: 'activate-company/:activation_code', component: ActivateCompanyComponent },
+    { path: 'check-email-message', component: RegisterCheckEmailMessageComponent },
+    { path: 'cost-of/:what', component: CostOfFreshComponent },
+    { path: 'week-panel/:cost_of/:id', component: WeekPanelComponent },
+    { path: 'sales', component: SalesComponent },
+    { path: 'projections', component: ProjectionComponent },
+    { path: 'inventory', component: InventoryComponent },
+    { path: 'forget-password', component: ForgetPasswordComponent },
+    { path: 'check-email', component: CheckEmailComponent },
+    { path: 'reset-password', component: ResetPasswordComponent },
+    { path: 'sucess', component: SucessComponent },
+
+
+	{ path: 'weeklyprojections', component: WeeklyProjectionComponent },
+    { path: 'scheduler', component: SchedulerComponent },
+    { path: 'employees', component: EmployeeParentComponent },
+    { path: 'employees-list', component: EmployeeListComponent },
+    { path: 'create-employee', component: CretateEmployeeComponent },
+    { path: 'edit-employee/:id', component: EditEmployeeComponent },
+    { path: 'companyemployee-list', component: CompanyemployeeParentComponent },
+    { path: 'create-companyemployee', component: CreateCompanyemployeeComponent },
+    { path: 'edit-companyemployee/:id', component: EditCompanyemployeeComponent },
+	{ path: 'app-users', component: AppUserListComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.COMPANYADMIN, Role.STOREMANAGER, Role.APPUSER] }},
+	{ path: 'app-user-create', component: AppUserCreateComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.COMPANYADMIN, Role.STOREMANAGER, Role.APPUSER] }},
+	{ path: 'app-user-edit/:id', component: AppUserEditComponent, canActivate: [AuthGuard],data: { roles: [Role.ROOT, Role.COMPANYADMIN, Role.STOREMANAGER, Role.APPUSER] }},
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: 'home' }
+];
+
+export const appRoutingModule = RouterModule.forRoot(routes);

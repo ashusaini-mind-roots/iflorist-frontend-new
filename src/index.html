@@ -1,0 +1,89 @@
+﻿<html>
+
+<head>
+  <base href="/" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <!-- <meta name="description" content="IFlorist">
+    <meta name="author" content="IFlorist">
+    <meta name="keywords" content="IFlorist"> -->
+  <!-- <link rel="icon" href="assets/image/favicon.png" type="image/png"> -->
+
+
+  <!-- Favicon -->
+  <!-- <link rel="icon" type="image/x-icon" href="assets/image/favicon.ico"> -->
+
+
+  <link rel="icon" href="assets/new-design/img/newimages/logo.png" type="image/x-icon" />
+
+  <!-- Title -->
+  <title>IFlorist</title>
+
+  <!---Fontawesome css-->
+  <link href="assets/new-design/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!---Ionicons css-->
+  <link href="assets/new-design/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+  <!---Typicons css-->
+  <link href="assets/new-design/plugins/typicons.font/typicons.css" rel="stylesheet">
+
+  <!---Feather css-->
+  <link href="assets/new-design/plugins/feather/feather.css" rel="stylesheet">
+
+  <!---Falg-icons css-->
+  <link href="assets/new-design/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+
+  <!---Style css-->
+  <link href="assets/new-design/css/style.css" rel="stylesheet">
+  <link href="assets/new-design/css/custom-style.css" rel="stylesheet">
+  <link href="assets/new-design/css/skins.css" rel="stylesheet">
+  <link href="assets/new-design/css/dark-style.css" rel="stylesheet">
+  <link href="assets/new-design/css/custom-dark-style.css" rel="stylesheet">
+  <!---Sidebar css-->
+  <link href="assets/new-design/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+  <!---Owl Carousel css-->
+  <link href="assets/new-design/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+
+  <!---Multislider css-->
+  <link href="assets/new-design/plugins/multislider/multislider.css" rel="stylesheet">
+  <link href="assets/new-design/css/customstyle.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script> -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+          } else {
+            dropdownContent.style.display = "block";
+          }
+        });
+      }
+    });
+  </script>
+</head>
+
+<body class="main-body loginbody">
+
+  <app>
+    <!-- Loader -->
+    <div id="global-loader">
+      <img src="assets/new-design/img/loader.svg" class="loader-img" alt="Loader">
+    </div>
+    <!-- End Loader -->
+  </app>
+</body>
+
+</html>
