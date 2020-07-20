@@ -28,9 +28,9 @@ export class PlanService {
          console.log(acess_token);  
          const  params = new HttpParams()
          .set('nuflorist_user_id',userId)
-         .set ('acess_token',acess_token);
+         .set ('accessToken',acess_token);
 
-        return this.http.get<any>(`${environment.apiUrl}/plan/modulesbyuser/${params}`)
+        return this.http.get<any>(`${environment.apiUrl}/plan/modulesbyuser/?${params}`)
         .pipe(
             retry(1),
             /*catchError(this.handleError)*/
