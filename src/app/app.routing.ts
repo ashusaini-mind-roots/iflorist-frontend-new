@@ -1,4 +1,5 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
@@ -34,7 +35,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component'
 import { CheckEmailComponent } from './check-email/check-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { SucessComponent } from './sucess/sucess.component'
+import { SucessComponent } from './sucess/sucess.component';
+
 
 
 const routes: Routes = [
@@ -75,5 +77,7 @@ const routes: Routes = [
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' }
 ];
+
+
 
 export const appRoutingModule = RouterModule.forRoot(routes);

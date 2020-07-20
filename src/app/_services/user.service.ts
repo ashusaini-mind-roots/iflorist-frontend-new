@@ -11,4 +11,14 @@ export class UserService {
     getAll() {
         return this.http.get<User[]>(`${environment.apiUrl}/users`);
     }
+ 
+    forgotPassword(email) {
+        return this.http.post<any>(`${environment.apiUrl} /forgotpassword`, { email });
+      }
+ 
+
+
+
+
+
 }
