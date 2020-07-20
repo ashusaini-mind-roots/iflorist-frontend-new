@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '@app/_services'; 
+
 
 @Component({
   selector: 'app-forget-password',
@@ -18,7 +20,8 @@ export class ForgetPasswordComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router, ) { }
+    private router: Router,
+    private userService:UserService ) { }
 
   ngOnInit(): void {
 
@@ -26,6 +29,7 @@ export class ForgetPasswordComponent implements OnInit {
       email: ['', Validators.required]
 
     });
+
 
   }
 
@@ -36,12 +40,18 @@ export class ForgetPasswordComponent implements OnInit {
   onSubmit() {
 
     this.submitted = true;
-    
+
     if (this.forgetForm.invalid) {
       return;
     }
+      this.loading = true;
+    this.userService.forgotPassword(this.forgetForm.value).subscribe((res)=>{
+      console.log(res);
+       if(res.status == 2){
+         this.router.navigate[('/sucess')];
+       }
 
-
+    })
 
 
   }

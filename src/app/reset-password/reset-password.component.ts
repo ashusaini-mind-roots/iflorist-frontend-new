@@ -26,18 +26,24 @@ export class ResetPasswordComponent implements OnInit {
      confirmPassword: ['', Validators.required]
     },{
       validator: MustMatch('password', 'confirmPassword')
-    
-    
+
     });
   
- 
-
   }
 
     // convenience getter for easy access to form fields
     get f() { return this.resetForm.controls; }
 
 
+    onSubmit() {
+      this.submitted = true;
 
+      // stop here if form is invalid
+      if (this.resetForm.invalid) {
+          return;
+      }
+
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.resetForm.value))
+  }
 
 }

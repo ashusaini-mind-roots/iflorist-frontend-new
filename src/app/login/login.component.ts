@@ -2,6 +2,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { NgZone } from '@angular/core';
 
 import { AuthenticationService } from '@app/_services'; 
 
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
+        private authenticationService: AuthenticationService,
+        private zone: NgZone
     ) { 
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
@@ -48,10 +50,15 @@ export class LoginComponent implements OnInit {
 		{
 			this.onSubmit();
 		}
-	}
+    }
+    
+    forgetpassword(){
+    this.router.navigate(['/forget-password'])
+    // this.zone.run(() => this.router.navigate(['/forget-password']));
+    }
 
     onSubmit() {
-        this.submitted = true;
+        this.submitted = true; 
 
         // stop here if form is invalid
         if (this.loginForm.invalid) {
@@ -65,7 +72,10 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     if(!data.error)
+                  
                     {
+                        console.log(data)
+                        
                         this.router.navigate([this.returnUrl]);
                         this.router.navigate(['/home']).then(()=>{window.location.reload();});
                     }
