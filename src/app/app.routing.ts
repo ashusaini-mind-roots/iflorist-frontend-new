@@ -36,6 +36,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { CheckEmailComponent } from './check-email/check-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SucessComponent } from './sucess/sucess.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -60,7 +61,7 @@ const routes: Routes = [
     { path: 'reset-password', component: ResetPasswordComponent },
     { path: 'success', component: SucessComponent },
 
-
+    { path: 'profile', component: ProfileComponent },
 	{ path: 'weeklyprojections', component: WeeklyProjectionComponent },
     { path: 'scheduler', component: SchedulerComponent },
     { path: 'employees', component: EmployeeParentComponent },

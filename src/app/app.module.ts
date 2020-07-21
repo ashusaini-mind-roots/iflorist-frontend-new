@@ -65,7 +65,9 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { CheckEmailComponent } from './check-email/check-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { SucessComponent } from './sucess/sucess.component'
+import { SucessComponent } from './sucess/sucess.component';
+import { ProfileComponent } from './profile/profile.component';
+
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
@@ -144,7 +146,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 		CheckEmailComponent
 ,
 		ResetPasswordComponent ,
-		SucessComponent           ],
+		SucessComponent ,
+		ProfileComponent          ],
 
         
 

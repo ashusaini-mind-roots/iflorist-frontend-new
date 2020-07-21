@@ -27,13 +27,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-            ],
+            "styles": [],
             "scripts": [
-               "./node_modules/newDesign/assets/plugins/jquery/jquery.min.js", 
-              "./node_modules/newDesign/assets/plugins/bootstrap/js/bootstrap.bundle.min.js", 
+              "./node_modules/newDesign/assets/plugins/jquery/jquery.min.js",
+              "./node_modules/newDesign/assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
               "./node_modules/newDesign/assets/plugins/ionicons/ionicons.js",
-              "./node_modules/newDesign/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js",  
+              "./node_modules/newDesign/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js",
               "./node_modules/newDesign/assets/plugins/rating/jquery.rating-stars.js",
               "./node_modules/newDesign/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js",
               "./node_modules/newDesign/assets/plugins/sidebar/sidebar.js",
@@ -143,9 +142,7 @@
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.less"
             ],
-            "scripts": [
-             
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -176,5 +173,8 @@
       }
     }
   },
-  "defaultProject": "angular-8-jwt-authentication-example"
+  "defaultProject": "angular-8-jwt-authentication-example",
+  "cli": {
+    "analytics": "a6db373b-f1dd-438f-8398-bf183d94dd91"
+  }
 }

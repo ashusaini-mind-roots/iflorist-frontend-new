@@ -1,0 +1,547 @@
+<!-- Page Header -->
+<div class="page-header">
+	<div>
+		<h2 class="main-content-title tx-24 mg-b-5"><a routerLink='/profile'>Profile</a></h2>
+	</div>
+	
+</div>
+<!-- End Page Header -->
+
+<!-- Row -->
+<div class="row">
+<div class="col-lg-8">
+  <div class="card custom-card">
+	<div class="card-body p-0">
+	  <div class="bg-light">
+		<nav class="nav nav-tabs main-nav-line main-nav-line-chat card-body navneww">
+			<a class="nav-link active" data-toggle="tab" href="#users">Users</a>
+			<a class="nav-link" data-toggle="tab" href="#mystores">My Stores</a>
+			<a class="nav-link" data-toggle="tab" href="#employees">Employees</a>
+			<a class="nav-link" data-toggle="tab" href="#roles">Roles</a>
+		</nav>
+	  </div>
+	<div class="card-body tab-content">
+		<div class="tab-pane active show" id="users">
+			<div class="usersttabmain rolestabmain">
+			<div class="table-responsive">
+					<table class="table" id="userdatables">
+						<thead>
+							<tr>
+								<th>FIRST NAME</th>
+								<th>LAST NAME</th>
+								<th>EMAIL ADDRESS</th>
+								<th>PHONE NUMBER</th>
+								<th>ROLE</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							    <td>John</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							<tr>
+							    <td>John</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="createnewusers">
+				 <button class="btn ripple btn-main-primary buttoncolor cnewusers" style="width:auto;">Add New User</button>
+				</div>
+				<div class="stepformusers">
+				 <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>First Name</label>
+						<input class="form-control effect-1" placeholder="First Name" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Last Name</label>
+						<input class="form-control effect-1" placeholder="Last Name" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   </div>
+			   <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Email Address</label>
+						<input class="form-control effect-1" placeholder="Email Address" type="email">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Phone Number</label>
+						<input class="form-control effect-1" placeholder="Phone Number" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			  
+			 </div>
+			 
+			
+			 
+			 <div class="col-md-12 p-0">
+			   <div class="col-md-12 ffleft">
+					<label>Please assign a role to your account</label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Admin</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Manager</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Employee</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Contractor</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Auditor</span></label>
+				 </div>
+			  
+			 </div>
+			 <div class="col-md-12 p-0">
+					<div class="col-md-6 ffleft">
+						 <button class="btn ripple btn-main-primary buttoncolor">Save</button>
+						 <button class="btn ripple btn-main-primary buttoncolor cancelusers">Cancel</button>
+					</div>
+			</div>
+		</div>
+			
+			</div>								
+		</div>
+		<div class="tab-pane" id="mystores">
+			<div class="usersttabmain rolestabmain">
+			  <div class="table-responsive">
+					<table class="table" id="mystoresdatatables">
+						<thead>
+							<tr>
+								<th>STORE NAME</th>
+								<th>EMAIL ADDRESS</th>
+								<th>PHONE NUMBER</th>
+								<th>WEBSITE</th>
+								<th>STATUS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							<td><img src="assets/new-design/img/users/1.jpg" width="25" style="border-radius:100%;margin-right:5px;"/>John</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="createnewstore">
+				 <button class="btn ripple btn-main-primary buttoncolor cnewstore" style="width:auto;">Add New Store</button>
+				</div>
+				<div class="stepformstore">
+				  <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Store Name</label>
+						<input class="form-control effect-1" placeholder="Store Name" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Website</label>
+						<input class="form-control effect-1" placeholder="Website" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   </div>
+			   <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Email Address</label>
+						<input class="form-control effect-1" placeholder="Email Address" type="email">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Phone Number</label>
+						<input class="form-control effect-1" placeholder="Phone Number" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			  
+			 </div>
+			 
+			 <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Address</label>
+						<input class="form-control effect-1" placeholder="Address" type="email">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>City</label>
+						<input class="form-control effect-1" placeholder="City" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			  
+			 </div>
+			 
+			 <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>State</label>
+						<input class="form-control effect-1" placeholder="State" type="email">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Zip</label>
+						<input class="form-control effect-1" placeholder="Zip" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			  
+			 </div>
+							 <div class="col-md-12 p-0">
+							 <div class="col-md-6 ffleft">
+							  <button class="btn ripple btn-main-primary buttoncolor">Save</button>
+							   <button class="btn ripple btn-main-primary buttoncolor cancelstore">Cancel</button>
+							   </div>
+							 </div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="tab-pane" id="employees">
+			<div class="usersttabmain rolestabmain employeemaintab">
+			<div class="table-responsive">
+					<table class="table" id="employeesdatable">
+						<thead>
+							<tr>
+								<th>FIRST NAME</th>
+								<th>LAST NAME</th>
+								<th>EMAIL ADDRESS</th>
+								<th>PHONE NUMBER</th>
+								<th>STORE</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>aaaa</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							<tr>
+								<td>John</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							<tr>
+								<td>John</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							<tr>
+								<td>John</td>
+								<td>Davis</td>
+								<td>johndavis@floral.com</td>
+								<td>(555)555-5555</td>
+								<td>Houston</td>
+							</tr>
+							
+							
+							
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="stepformemployee">
+				  <div class="col-md-12 p-0">
+						   <div class="col-md-6 ffleft">
+								<div class="form-group text-left customeffect mb40">
+								<label>First Name</label>
+									<input class="form-control effect-1" placeholder="First Name" type="text">
+									<span class="focus-border"></span>
+								</div>
+						   </div>
+						   <div class="col-md-6 ffleft">
+								<div class="form-group text-left customeffect mb40">
+								<label>Last Name</label>
+									<input class="form-control effect-1" placeholder="Last Name" type="text">
+									<span class="focus-border"></span>
+								</div>
+						   </div>
+						  </div>
+						<div class="col-md-12 p-0">
+						   <div class="col-md-6 ffleft">
+								<div class="form-group text-left customeffect mb40">
+								<label>Email Address</label>
+									<input class="form-control effect-1" placeholder="Email Address" type="email">
+									<span class="focus-border"></span>
+								</div>
+						   </div>
+						   <div class="col-md-6 ffleft">
+								<div class="form-group text-left customeffect mb40">
+								<label>Phone Number</label>
+									<input class="form-control effect-1" placeholder="Phone Number" type="text">
+									<span class="focus-border"></span>
+								</div>
+						   </div>
+						  </div>
+						  <div class="col-md-12 p-0">
+						   <div class="col-md-6 ffleft">
+								<div class="form-group text-left mb40">
+								<label>Status</label>
+								<select class="form-control" name="status">
+								    <option value="Employee">Employee</option>
+								    <option value="Employee">Employee</option>
+								</select>
+									
+								</div>
+						   </div>
+						   <div class="col-md-6 ffleft">
+								<div class="form-group text-left customeffect mb40">
+								<label>Job Title</label>
+									<input class="form-control effect-1" placeholder="Job Title" type="text">
+									<span class="focus-border"></span>
+								</div>
+						   </div>
+						  </div>
+						   <div class="col-md-12 p-0">
+							  <div class="col-md-12 ffleft">
+							  <label>Componsation</label>
+							  <label class="rdiobox"><input name="rdio" type="radio"> <span>Salary</span></label>
+							  <label class="rdiobox"><input name="rdio" type="radio"> <span>Hourly</span></label>
+							  
+							  </div>
+							  <div class="col-md-6 ffleft"></div>
+							 </div>
+							 <div class="col-md-12 p-0">
+							 <div class="col-md-6 ffleft">
+							  <button class="btn ripple btn-main-primary buttoncolor">Save</button>
+							   <button class="btn ripple btn-main-primary buttoncolor cancelemployee">Cancel</button>
+							   </div>
+							 </div>
+				</div>
+				
+				<div class="createnewrole">
+				 <button class="btn ripple btn-main-primary buttoncolor cnewemployee" style="width:auto;">Create New Employee</button>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="roles">
+			<div class="usersttabmain rolestabmain">
+			<div class="table-responsive">
+					<table class="table" id="rolesdatatables">
+						<thead>
+							<tr>
+								<th>ROLE NAME</th>
+								<th>Created</th>
+								<th>Permissions</th>
+								<th>Users</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Admin</td>
+								<td>07/20/2019</td>
+								<td>24/24</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Admin</td>
+								<td>07/20/2019</td>
+								<td>24/24</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Admin</td>
+								<td>07/20/2019</td>
+								<td>24/24</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Admin</td>
+								<td>07/20/2019</td>
+								<td>24/24</td>
+								<td>2</td>
+							</tr>
+							
+							
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="createnewrole">
+				 <button class="btn ripple btn-main-primary buttoncolor cnewroles" style="width:160px;">Create New Role</button>
+				</div>
+				<div class="stepformroles">
+				 <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>First Name</label>
+						<input class="form-control effect-1" placeholder="First Name" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Last Name</label>
+						<input class="form-control effect-1" placeholder="Last Name" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   </div>
+			   <div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Email Address</label>
+						<input class="form-control effect-1" placeholder="Email Address" type="email">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Phone Number</label>
+						<input class="form-control effect-1" placeholder="Phone Number" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			  
+			 </div>
+			 
+			<div class="col-md-12 p-0">
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Email Address</label>
+						<input class="form-control effect-1" placeholder="Email Address" type="email">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			   <div class="col-md-6 ffleft">
+					<div class="form-group text-left customeffect mb40">
+					<label>Job Title</label>
+						<input class="form-control effect-1" placeholder="Phone Number" type="text">
+						<span class="focus-border"></span>
+					</div>
+			   </div>
+			  
+			 </div>
+			 
+			 <div class="col-md-12 p-0">
+			   <div class="col-md-12 ffleft">
+					<label>Please assign a role to your account</label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Admin</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Manager</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Employee</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Contractor</span></label>
+					<label class="rdiobox"><input name="rdio" type="radio"> <span>Auditor</span></label>
+				 </div>
+			  
+			 </div>
+			 <div class="col-md-12 p-0">
+					<div class="col-md-6 ffleft">
+						 <button class="btn ripple btn-main-primary buttoncolor">Save</button>
+						 <button class="btn ripple btn-main-primary buttoncolor cancelroles">Cancel</button>
+					</div>
+			</div>
+		</div>
+				
+			</div>
+		</div>
+						
+	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-4">
+		<div class="card custom-card">
+			<div class="card-body text-center">
+				<div class="main-profile-overview widget-user-image text-center">
+					<div class="main-img-user"><img alt="avatar" src="assets/new-design/img/users/1.jpg"></div>
+				</div>
+				<div class="item-user pro-user">
+					<h4 class="pro-user-username text-dark mt-2 mb-0">Flora Co Ltd.</h4>
+					<div class="divsection">
+					  <span class="s1">www.Flora.com</span>
+					  <span class="s2">Hi@Flora.com</span>
+					</div>
+					<p class="pro-user-desc mb-1 colorprofilecss">124004 Sunny Isles blvd. Houston, TX 55555</p>
+					
+				</div>
+			</div>
+			<div class="profilebottomsection">
+				<div class="card-header custom-card-header">
+					<h6 class="card-title mb-0">Stores/Locations</h6>
+				</div>
+				<div class="card-body p-0">
+			      <div class="card-body">
+					<div class="browser-stats">
+					  <div class="d-flex align-items-center border-bottom p-3">
+						<div class="d-flex">
+							<p class="mb-0 leftftab">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							1200 elm st. ste.87</p>
+						</div>
+						<div class="ml-auto">
+							<div class="d-flex">
+								<span class="mr-4 rightftab">Edit Store</span>
+							</div>
+						</div>
+					 </div>
+					 <div class="d-flex align-items-center border-bottom p-3">
+						<div class="d-flex">
+							<p class="mb-0 leftftab">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							1200 elm st. ste.87</p>
+						</div>
+						<div class="ml-auto">
+							<div class="d-flex">
+								<span class="mr-4 rightftab">Edit Store</span>
+							</div>
+						</div>
+					 </div>
+					 <div class="d-flex align-items-center border-bottom p-3">
+						<div class="d-flex">
+							<p class="mb-0 leftftab">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							1200 elm st. ste.87</p>
+						</div>
+						<div class="ml-auto">
+							<div class="d-flex">
+								<span class="mr-4 rightftab">Edit Store</span>
+							</div>
+						</div>
+					 </div>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+</div>
+	
+<!-- End Row -->
