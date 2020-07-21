@@ -58,7 +58,7 @@ const routes: Routes = [
     { path: 'forget-password', component: ForgetPasswordComponent },
     { path: 'check-email', component: CheckEmailComponent },
     { path: 'reset-password', component: ResetPasswordComponent },
-    { path: 'sucess', component: SucessComponent },
+    { path: 'success', component: SucessComponent },
 
 
 	{ path: 'weeklyprojections', component: WeeklyProjectionComponent },
