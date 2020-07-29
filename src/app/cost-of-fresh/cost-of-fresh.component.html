@@ -5,7 +5,7 @@
             <div class="card-body">
                 <div class="sumsec">
                     <h6 class="card-title mb-1">Summary</h6>
-                    <h6 class="card-titleright">Target 5%</h6>
+                    <h6 class="card-titleright">{{target}}%</h6>
                     
                 </div>
                 <div class="table-responsive">
@@ -23,15 +23,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span class="monthicon">J</span>Jan 01 -Jan 08</td>
-                                <td>$12,968</td>
-                                <td>$12,968</td>
-                                <td>$6,968</td>
+                                <td><span class="monthicon">J</span>{{week.week_number}}-{{week.week_ending}}</td>
+                                <td>${{week.projected_weekly_revenue}}</td>
+                                <td>${{week.actual_weekly_revenue}}</td>
+                                <td>${{week.weekly_cog_total}}</td>
                                 <td>$6,968</td>
                                 <td>-2%</td>
-                                <td>+300</td>
+                                <td>${{week.difference}}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td><span class="monthicon">J</span>Jan 01 -Jan 08</td>
                                 <td>$12,968</td>
                                 <td>$12,968</td>
@@ -138,7 +138,7 @@
                                 <td>$6,968</td>
                                 <td>1%</td>
                                 <td>+300</td>
-                            </tr>
+                            </tr> -->
                             
                             
                         </tbody>

@@ -35,7 +35,13 @@ export class ForgetPasswordComponent implements OnInit {
 
   get f() { return this.forgetForm.controls }
 
-
+  checkInput(input)
+{
+   if(input == 'email')
+   {
+     this.error = '';
+   }   
+}
 
   onSubmit() {
 
@@ -45,10 +51,16 @@ export class ForgetPasswordComponent implements OnInit {
       return;
     }
       this.loading = true;
-    this.userService.forgotPassword(this.forgetForm.value).subscribe((res)=>{
+      localStorage.setItem('email',this.f.email.value)
+    this.userService.forgotPassword(this.f.email.value).subscribe((res)=>{
       console.log(res);
+       if(res.status == 1){
+         this.router.navigate(['/checkemail']);
+       }
        if(res.status == 2){
-         this.router.navigate[('/sucess')];
+         console.log(res.validationErrors.email)
+         this.error = res.validationErrors.email;
+         this.loading = false;
        }
 
     })

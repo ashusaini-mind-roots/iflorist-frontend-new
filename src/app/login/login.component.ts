@@ -78,6 +78,9 @@ export class LoginComponent implements OnInit {
                         
                         this.router.navigate([this.returnUrl]);
                         this.router.navigate(['/home']).then(()=>{window.location.reload();});
+                        document.body.classList.remove('loginbody'); 
+                      
+
                     }
                     else
                     {

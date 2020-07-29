@@ -1,13 +1,4 @@
 
-
-	<body class="main-body loginbody">
-
-		<!-- Loader -->
-		<div id="global-loader">
-			<img src="assets/new-design/img/loader.svg" class="loader-img" alt="Loader">
-		</div>
-		<!-- End Loader -->
-
 		<!-- Page -->
 		<div class="main-signin-wrapper loginpage">
 
@@ -24,11 +15,11 @@
 					</div>
 					<div class="card custom-card">
 						<div class="card-body">
-							<h4 class="text-center fontweightbold">Success!</h4>
-							<p class="afterlogintext">Your new password has been created.</p>
+							<h4 class="text-center fontweightbold">Check Your Email</h4>
+							<p class="afterlogintext">We sent an email to {{email}} with instruction to rest the password</p>
 							<form>
 								
-							<button class="btn ripple btn-main-primary buttoncolor"(click)="backtoLogin()">Back to Login</button>
+								<button class="btn ripple btn-main-primary buttoncolor"(click)="Resendemail()">Resend Email</button>
 							</form>
 							
 						</div>
@@ -80,4 +71,5 @@
 		</div>
 		<!-- End Page -->
 
+		<!-- Jquery js-->
 	

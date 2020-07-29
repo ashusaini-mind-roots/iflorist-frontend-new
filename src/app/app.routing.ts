@@ -12,7 +12,7 @@ import {RegisterGeneralDataComponent} from './register-general-data/register-gen
 import {RegisterPlanDataComponent} from './register-plan-data/register-plan-data.component';
 import {RegisterCcDataComponent} from './register-cc-data/register-cc-data.component';
 import {ActivateCompanyComponent} from './activate-company/activate-company.component';
-import {RegisterCheckEmailMessageComponent} from './register-check-email-message/register-check-email-message.component';
+import {RegisterCheckEmailMessageComponent} from'./register-check-email-message/register-check-email-message.component';
 import {CostOfFreshComponent} from "@app/cost-of-fresh/cost-of-fresh.component";
 import {WeekPanelComponent} from "@app/week-panel/week-panel.component";
 import {ProjectionComponent} from './projection/projection.component'
@@ -37,6 +37,7 @@ import { CheckEmailComponent } from './check-email/check-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SucessComponent } from './sucess/sucess.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CheckemailComponent } from './checkemail/checkemail.component'
 
 
 
@@ -58,8 +59,9 @@ const routes: Routes = [
     { path: 'inventory', component: InventoryComponent },
     { path: 'forget-password', component: ForgetPasswordComponent },
     { path: 'check-email', component: CheckEmailComponent },
-    { path: 'reset-password', component: ResetPasswordComponent },
+    { path: 'reset-password/:id', component: ResetPasswordComponent },
     { path: 'success', component: SucessComponent },
+    { path: 'checkemail', component: CheckemailComponent },
 
     { path: 'profile', component: ProfileComponent },
 	{ path: 'weeklyprojections', component: WeeklyProjectionComponent },

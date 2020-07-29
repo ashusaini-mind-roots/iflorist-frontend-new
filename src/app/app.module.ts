@@ -7,7 +7,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 import { PhoneMaskDirective } from './_helpers'; 
-
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -66,7 +65,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { CheckEmailComponent } from './check-email/check-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SucessComponent } from './sucess/sucess.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile.component';;
+import { CheckemailComponent } from './checkemail/checkemail.component'
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -147,7 +147,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 ,
 		ResetPasswordComponent ,
 		SucessComponent ,
-		ProfileComponent          ],
+		ProfileComponent ,
+		CheckemailComponent],
 
         
 

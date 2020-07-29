@@ -10,7 +10,7 @@ import {UtilsService} from "../_services/utils.service";
 import {StoreSubscriberService} from "@app/_services/storeSubscriber.service";
 import {CostOfFreshService} from "@app/_services/costOfFresh.service";
 import {SchedulerService} from "@app/_services/scheduler.service";
-import * as $ from 'jquery' 
+import * as $ from 'jquery';
 declare  var jQuery:  any;
 
 @Component({ templateUrl: 'home.component.html' })
@@ -69,7 +69,7 @@ export class HomeComponent {
         storeSubscriberService.subscribe(this,function (ref,store) {
             ref.receiveStorage(store);
         });
-        this.yearQuarter = {year : this.utilService.GetCurrentYear(), quarter: 1};
+        this.yearQuarter = {year :this.utilService.GetCurrentYear(), quarter: 1};
 
         //sales
         this.projWeeklyRevQuarter = 0.00;
@@ -100,6 +100,8 @@ export class HomeComponent {
     ngOnInit() {
         this.selectedStorage = JSON.parse(localStorage.getItem('selectedStorage'));
 
+        document.body.classList.remove('loginbody'); 
+
         //TO LOAD THE BAR CHART CORRECTLY WITH JQUERY
         (function ($) {
           $(document).ready(function(){
@@ -112,14 +114,14 @@ export class HomeComponent {
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,
-                              data: [14, 18, 20, 14, 29, 21, 25, 14, 24,20]
+                              data: this.actualSalesByWeek
                             },
                             {
                               name: 'Profit',
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,
-                              data: [12, 14, 15, 50, 24, 24, 10, 20 ,30,40]
+                              data: this.projectedSalesByWeek
                             }
                         ];
                         var option5 = {
@@ -184,14 +186,14 @@ export class HomeComponent {
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,  
-                              data: [14, 18, 20, 14, 29, 21, 25, 14, 24,21]
+                              data: this.actualCogByWeek
                             },
                             {
                               name: 'Profit',
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,  
-                              data: [12, 14, 15, 50, 24, 24, 10, 20 ,30,10]
+                              data: this.projectedCogByWeek
                             }
                         ];
                         var option2 = {
@@ -256,14 +258,14 @@ export class HomeComponent {
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,
-                              data: [14, 18, 20, 14, 29, 21, 25, 14, 24,29]
+                              data: this.actualSalesByWeek
                             },
                             {
                               name: 'Profit',
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,  
-                              data: [12, 14, 15, 50, 24, 24, 10, 20 ,30,15]
+                              data: this.projectedSalesByWeek
                             }
                         ];
                         var option3 = {
@@ -328,14 +330,14 @@ export class HomeComponent {
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,  
-                              data: [14, 18, 20, 14, 29, 21, 25, 14, 24,18]
+                              data: this.actualCofByWeek
                             },
                             {
                               name: 'Profit',
                               type: 'bar',
                               stack: 'Stack',
                               barMaxWidth: 15,  
-                              data: [12, 14, 15, 50, 24, 24, 10, 20 ,30,24]
+                              data: this.projectedCofByWeek
                             }
                         ];
                         var option4 = {
@@ -362,23 +364,23 @@ export class HomeComponent {
                               data: ['1', '2', '3', '4', '5', '6', '7', '8', '9','10'],
                               axisLine: {
                                 lineStyle: {
-                                  color: 'rgba(119, 119, 142, 0.2)'
+                                  color:'rgba(119, 119, 142, 0.2)'
                                 }
                               },
                               axisLabel: {
                                 fontSize: 10,
-                                color: '#77778e'
+                                color:'#77778e'
                               }
                             },
                             yAxis: {
                               splitLine: {
                                 lineStyle: {
-                                  color: 'rgba(119, 119, 142, 0.2)'
+                                  color:'rgba(119, 119, 142, 0.2)'
                                 }
                               },
                               axisLine: {
                                 lineStyle: {
-                                  color: 'rgba(119, 119, 142, 0.2)'
+                                  color:'rgba(119, 119, 142, 0.2)'
                                 }
                               },
                               axisLabel: {
@@ -423,7 +425,7 @@ export class HomeComponent {
                     label:'Actual',
                     backgroundColor: '#1caba0',
                     borderColor: '#1caba0',
-                    data: this.actualSalesByWeek
+                    data:this.actualSalesByWeek
                 },
                 {
                     label:'Projected',
@@ -515,6 +517,7 @@ export class HomeComponent {
         this.loading = true;
         this.salesService.getSales(this.selectedStorage.id,this.yearQuarter.year,this.yearQuarter.quarter).subscribe((response: any) =>{
             this.weeks = response.weeks;
+            console.log(this.weeks);
             this.calcActualSalesTotal();
             this.getProjectedSales();
         });
@@ -560,6 +563,7 @@ export class HomeComponent {
         for (let i = 0; i < this.weeks.length; i++) {
             let total = this.weeks[i].totalDelivery + this.weeks[i].totalWire + this.weeks[i].totalMerchandise;
             this.actualSalesTotal += total;
+            console.log(this.actualSalesTotal);
             this.actualSalesByWeek[(this.weeks[i].number - (13 * (this.yearQuarter.quarter - 1)))-1] = total;
         }
     }

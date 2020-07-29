@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="form-group text-left customeffect">
-                             <input class="form-control effect-1" formControlName="password" placeholder="Password" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                             <input class="form-control effect-1"  formControlName="password" placeholder="Password" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                              <span class="focus-border"></span>
                              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                 <span *ngIf="f.password.errors.required" class="focus-border">Password is required</span>

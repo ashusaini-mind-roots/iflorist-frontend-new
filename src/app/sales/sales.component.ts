@@ -48,7 +48,7 @@ export class SalesComponent implements OnInit {
 
   }
 
-  initActualSalesByWeekArray(){
+  initActualSalesByWeekArray(){ 
     this.actualSalesByWeek = [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00];
     this.projectedSalesByWeek = [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00];
   }
@@ -78,14 +78,14 @@ export class SalesComponent implements OnInit {
             type: 'bar',
             stack: 'Stack',
             barMaxWidth: 15,  
-            data: [14, 18, 20, 14, 29, 21, 25, 14, 24,18,12,17]
+            data: this.actualSalesByWeek
           },
           {
             name: 'Profit',
             type: 'bar',
             stack: 'Stack',
             barMaxWidth: 15,    
-            data: [12, 14, 15, 50, 24, 24, 10, 20 ,30,24,15,50]
+            data: this.projectedSalesByWeek
           }
         ];
         var option44 = {
