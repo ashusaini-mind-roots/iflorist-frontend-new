@@ -80,10 +80,10 @@
             <div class="dropdown-menu">
               <div class="header-navheading">
                 <h5><img class="profiledropdowninfo" alt="avatar" src="assets/new-design/img/users/1.jpg"></h5>
-                <h6 class="main-notification-title">Flora Co Ltd.</h6>
-                <p class="main-notification-text">Hi@Flora.com</p>
+                <h6 class="main-notification-title">{{currentUser.company.company_name}}</h6>
+                <p class="main-notification-text">{{currentUser.company.email}}</p>
               </div>
-              <a class="dropdown-item border-top" routerLink="/profile">
+              <a class="dropdown-item border-top" routerLink="/profile"> 
                 <i class="fe fe-user"></i>Profile
               </a>
               <a class="dropdown-item" href="">

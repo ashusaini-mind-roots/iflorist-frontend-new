@@ -99,7 +99,7 @@ export class HomeComponent {
 
     ngOnInit() {
         this.selectedStorage = JSON.parse(localStorage.getItem('selectedStorage'));
-
+           
         document.body.classList.remove('loginbody'); 
 
         //TO LOAD THE BAR CHART CORRECTLY WITH JQUERY

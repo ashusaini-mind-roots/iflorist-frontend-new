@@ -21,14 +21,14 @@ export class PlanService {
         )
     }
 
-    getByUser(userId: string):Observable<any>
+    getByUser(userId: string):Observable<any> 
     {
         const currentUser = this.AuthenticationService.currentUserValue;
          var acess_token = currentUser.access_token
          console.log(acess_token);  
          const  params = new HttpParams()
          .set('nuflorist_user_id',userId)
-         .set ('accessToken',acess_token);
+         .set('accessToken',acess_token);
 
         return this.http.get<any>(`${environment.apiUrl}/plan/modulesbyuser/?${params}`)
         .pipe(

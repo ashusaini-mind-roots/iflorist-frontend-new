@@ -32,6 +32,7 @@
             <div class="card-body">
                 <div class="dasundercardhead">
                     <h6 class="card-title mb-1">Sales</h6>
+                    <!-- <p-chart type="bar" [data]="salesChart"></p-chart> -->
                     <div class="dashpercentage">
                         <p>Actual: <span class="redcolor">{{actualSalesTotal| currency : 'USD'}}</span></p>
                         <p>Projected: <span class="tcolor">{{projWeeklyRevQuarter| currency : 'USD'}}</span></p>
@@ -49,6 +50,7 @@
                 
                 <div class="dasundercardhead">
                     <h6 class="card-title mb-1">Cost of Hard Goods</h6>
+                    <!-- <p-chart type="bar" [data]="cogChart"></p-chart> -->
                     <div class="dashpercentage">
                         <p>Actual: <span class="redcolor">{{actualCogTotal| currency : 'USD'}}</span></p>
                         <p>Projected: <span class="tcolor">{{projectionsCog| currency : 'USD'}}</span></p>
@@ -71,6 +73,7 @@
                 
                 <div class="dasundercardhead">
                     <h6 class="card-title mb-1">Cost of Fresh</h6>
+                    <!-- <p-chart type="bar" [data]="cofChart"></p-chart> -->
                     <div class="dashpercentage">
                         <p>Actual: <span class="redcolor">{{actualCofTotal | currency : 'USD'}}</span></p>
                         <p>Projected: <span class="tcolor">{{projectionsCof| currency : 'USD'}}</span></p>
@@ -88,6 +91,7 @@
                 
                 <div class="dasundercardhead">
                     <h6 class="card-title mb-1">Cost of Labor</h6>
+                    <!-- <p-chart type="bar" [data]="colChart"></p-chart>  -->
                     <div class="dashpercentage">
                         <p>Actual: <span class="redcolor">{{actualColTotal | currency : 'USD'}}</span></p>
                         <p>Projected: <span class="tcolor">{{projectionsCof| currency : 'USD'}}</span></p>
@@ -184,9 +188,6 @@
                             </div>
                             </div>
                             </form>
-                            
-
-
                         </div>
                     </div>
                 </div>
@@ -248,6 +249,5 @@
                         </div>
                     </div>
                 </div>
-               
             </div>
              

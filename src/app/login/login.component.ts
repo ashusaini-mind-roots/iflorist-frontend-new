@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
+        private route: ActivatedRoute, 
         private router: Router,
         private authenticationService: AuthenticationService,
         private zone: NgZone

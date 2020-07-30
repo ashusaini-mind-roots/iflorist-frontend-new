@@ -37,7 +37,6 @@ export class CostOfFreshComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.costOf = params['what'];
-
       if(this.costOf == 'fresh')
         this.title = 'Fresh';
       else this.title = 'Hard Goods';

@@ -13,7 +13,6 @@ declare var $: any;
 export class AppComponent implements OnInit{
     currentUser: User;
     toggled: boolean = false;
-
     modules: any;
     stores:any;
 	companyName:string = '';
@@ -30,7 +29,8 @@ export class AppComponent implements OnInit{
         if(currentUser)
         {
             return this.planService.getByUser(currentUser.user.id).subscribe((data: any) =>{
-                this.modules = data.modules;
+				this.modules = data.modules;
+				
             });
         }
     }
