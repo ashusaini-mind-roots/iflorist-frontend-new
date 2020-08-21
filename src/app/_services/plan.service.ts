@@ -30,7 +30,7 @@ export class PlanService {
          .set('nuflorist_user_id',userId)
          .set('accessToken',acess_token);
 
-        return this.http.get<any>(`${environment.apiUrl}/plan/modulesbyuser/?${params}`)
+        return this.http.get<any>(`${environment.apiUrl}/plan/modulesbyuser/${userId}`)
         .pipe(
             retry(1),
             /*catchError(this.handleError)*/
