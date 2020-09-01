@@ -1,25 +1,20 @@
-<div class="d-flex align-content-center pl-08">
-  <div class="mr-2 d-flex align-content-center ">
-    <div class="font-size-08 txt-color-gray3 font-medium pr-1 selectyear">Select Year:</div>
-    <div class="select mr-4">
-      <select class="" id="select-year" [(ngModel)]="yearSelected" (change)="onYearOrQuarterChange()">
-        <option *ngFor="let year of years" value="{{year}}">
+<div class="btn btn-list customsselect add-width">
+
+    <select class="form-control select select2" id="select-year" [(ngModel)]="yearSelected" (change)="onYearOrQuarterChange()">
+      <option value="">Year</option>
+      <option *ngFor="let year of years" value="{{year}}">
           {{year}}
-        </option>
-      </select>
-      <div class="select_arrow"></div>
-    </div>
-  </div>
-  <div *ngIf="showQuarter" class="mr-2 d-flex align-content-center ">
-    <div class="font-size-08 txt-color-gray3 font-medium pr-1 selectquarter">Select Quarter:</div>
-      <div class="select ">
-        <select class="" id="select-quarter" [(ngModel)]="quarterSelected" (change)="onYearOrQuarterChange()">
-          <option *ngFor="let quarter of quarters" value="{{quarter}}">
+      </option>     
+    </select>
+    <div class="select_arrow"></div>
+
+    <select class="form-control select select2" id="select-quarter" [(ngModel)]="quarterSelected" (change)="onYearOrQuarterChange()"> 
+      <option value="">Quarter</option>
+      <option *ngFor="let quarter of quarters" value="{{quarter}}">
             {{quarter}}
-          </option>
-        </select>
-        <div class="select_arrow"></div>
-      </div>
-  </div>
-</div>
+      </option>          
+    </select>
+    <div class="select_arrow"></div>
+    <app-stores-combo></app-stores-combo>
+</div> 
 

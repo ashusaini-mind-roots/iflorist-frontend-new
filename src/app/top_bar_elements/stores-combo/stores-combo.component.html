@@ -1,4 +1,4 @@
-<div class="d-flex">
+<!-- <div class="d-flex">
   <div class="font-size-09 txt-color-gray3 font-medium pr-1 selectstore">Select a Store:</div>
   <div class="select ">
     <select class="" id="select-stores-general" [(ngModel)]="storeIndexSelected" (change)="onStoreSelected(storeIndexSelected)">
@@ -8,5 +8,13 @@
     </select>
     <div class="select_arrow"></div>
   </div>
-</div>
+</div> -->
+
+<select class="form-control select select2" id="select-stores-general" [(ngModel)]="storeIndexSelected" (change)="onStoreSelected(storeIndexSelected)">
+      <option value="">Select Store</option>
+      <option *ngFor="let store of stores" value="{{store.id}}">
+        {{store.store_name}}
+      </option> 
+</select>    
+<div class="select_arrow"></div>
 
